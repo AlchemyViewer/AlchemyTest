@@ -90,7 +90,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update
-          sudo apt-get -y install ninja
+          sudo apt-get -y install ninja-build
 
       - name: Checkout code
         if: env.BUILD
