@@ -40,17 +40,17 @@ retry_cmd()
 
 build_dir_Darwin()
 {
-  echo build-darwin-x86_64
+  echo build-darwin-64
 }
 
 build_dir_Linux()
 {
-  echo build-linux-i686
+  echo build-linux-${AUTOBUILD_ADDRSIZE}
 }
 
 build_dir_CYGWIN()
 {
-  echo build-vc${AUTOBUILD_VSVER:-120}-${AUTOBUILD_ADDRSIZE}
+  echo build-vc-${AUTOBUILD_ADDRSIZE}
 }
 
 viewer_channel_suffix()
@@ -180,7 +180,7 @@ pre_build()
      ${eval_autobuild_configure_parameters:---} \
      -DLL_TESTS:BOOL=ON \
      -DPACKAGE:BOOL=ON \
-     -DHAVOK:BOOL="$HAVOK" \
+     -DHAVOK_TPV:BOOL="$HAVOK" \
      -DRELEASE_CRASH_REPORTING:BOOL="$RELEASE_CRASH_REPORTING" \
      -DVIEWER_SYMBOL_FILE:STRING="${VIEWER_SYMBOL_FILE:-}" \
      -DBUGSPLAT_DB:STRING="${BUGSPLAT_DB:-}" \

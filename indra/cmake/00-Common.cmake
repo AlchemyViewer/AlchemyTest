@@ -274,6 +274,8 @@ if(ENABLE_TIMING)
   add_compile_definitions(AL_ENABLE_ALL_TIMERS=1)
 endif()
 
+if(WINDOWS OR DARWIN)
 if(HAVOK OR HAVOK_TPV)
   add_compile_definitions(LL_HAVOK=1)
+endif()
 endif()
