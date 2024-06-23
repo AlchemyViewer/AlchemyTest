@@ -10,7 +10,7 @@ on:
   pull_request:
   push:
     branches: ["main", "release/*", "project/*"]
-    tags: ["Second_Life*"]
+    tags: ["Alchemy*"]
 
 jobs:
   # The whole point of the setvar job is that we want to set a variable once
@@ -27,7 +27,7 @@ jobs:
       # When you want to use a string variable as a workflow YAML boolean, it's
       # important to ensure it's the empty string when false. If you omit || '',
       # its value when false is "false", which is interpreted as true.
-      RELEASE_RUN: ${{ (github.event.inputs.release_run || github.ref_type == 'tag' && startsWith(github.ref_name, 'Second_Life')) && 'Y' || '' }}
+      RELEASE_RUN: ${{ (github.event.inputs.release_run || github.ref_type == 'tag' && startsWith(github.ref_name, 'Alchemy')) && 'Y' || '' }}
     steps:
       - name: Set Variable
         id: setvar
@@ -39,7 +39,7 @@ jobs:
     needs: setvar
     strategy:
       matrix:
-        runner: [windows-large, macos-12-xl]
+        runner: [ubuntu-22.04]
         configuration: [Release]
         Linden: [true]
 
