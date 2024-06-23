@@ -42,7 +42,6 @@ jobs:
         runner: [windows-large, macos-12-xl]
         configuration: [Release]
         Linden: [true]
-        include:
 
     runs-on: ${{ matrix.runner }}
     outputs:
