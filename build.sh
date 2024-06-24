@@ -253,7 +253,7 @@ build()
     fi
 
     # *TODO: Make this a build extension.
-    package_llphysicsextensions_tpv || fatal "failed building llphysicsextensions packages"
+    # package_llphysicsextensions_tpv || fatal "failed building llphysicsextensions packages"
     end_section "extensions $variant"
 
   else
