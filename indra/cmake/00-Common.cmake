@@ -188,6 +188,7 @@ if (LINUX)
     -fno-strict-aliasing
     -fsigned-char
     -g
+    -gz
     -pthread
     )
 

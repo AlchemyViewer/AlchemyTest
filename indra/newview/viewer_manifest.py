@@ -1276,7 +1276,7 @@ class LinuxManifest(ViewerManifest):
             # makes some small assumptions about our packaged dir structure
             self.run_command(
                 ["find"] +
-                [os.path.join(self.get_dst_prefix(), dir) for dir in ('bin', 'lib')] +
+                [os.path.join(self.get_dst_prefix(), dir) for dir in ('bin', 'bin/llplugin', 'lib')] +
                 ['-type', 'f', '!', '-name', '*.py', '!', '-name', '*.pak', '!', '-name', '*.bin', '!', '-name', '*.dat',
                  '!', '-name', 'update_install', '!', '-name', '*.exe', '!', '-name', '*.dll', '!', '-name', '*.lib', '!', '-name', '*.pdb', '!', '-name', '*.json', 
                  '-exec', 'strip', '-S', '{}', ';'])
