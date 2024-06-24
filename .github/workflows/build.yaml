@@ -90,7 +90,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update
-          sudo apt-get -y install build-essential ninja-build libdbus-1-dev
+          sudo apt-get -y install build-essential ninja-build libdbus-1-dev libvlc-dev
 
       - name: Checkout code
         if: env.BUILD
